@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ItemProdutoComponent } from './produto/item-produto/item-produto.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ItemProdutoComponent
   ],
   imports: [
     BrowserModule,
