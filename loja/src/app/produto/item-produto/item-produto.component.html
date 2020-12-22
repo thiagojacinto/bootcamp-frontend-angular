@@ -1,0 +1,44 @@
+<div class="card sticky-action">
+  <div class="card-image [tamanhoCard]">
+    <img src="https://thumbs.jusbr.com/filters:format(webp)/imgs.jusbr.com/publications/artigos/images/produto-esgotado-jpg.jpg" alt="Imagem do Produto" />
+    <span class="card-title">{{ produto.nome || "Placeholder" }}</span>
+  </div>
+
+  <div class="card-content">
+    <div class="produto__descricao container">
+      <span>Descrição:</span>
+      <p>{{ produto.descricao }}</p>
+    </div>
+  </div>
+
+  <div class="card-reveal container">
+    <span class="card-title">
+      {{ produto.nome }}
+      <i class="material-icons">close</i>
+    </span>
+    <div class="produto__informacoes">
+      <span>Fornecedor:</span>
+      <p>{{ produto.fornecedor }}</p>
+      <span>Categoria:</span>
+      <p>{{ produto.categoria }}</p>
+      <span>Marca:</span>
+      <p>{{ produto.marca }}</p>
+    </div>
+  </div>
+
+  <div class="action">
+    <div class="produto__comprar container">
+      <a class="btn orange lighten-2" href="#"><i class="material-icons">add_shopping_cart</i></a>
+
+      <a class="btn orange lighten-2" href="#" *ngIf="favorito; else naoFavorito" (click)="toggleFavorito()">
+        <i class="material-icons">favorite</i>
+      </a>
+      <ng-template #naoFavorito
+        ><a class="btn orange lighten-2" href="#" (click)="toggleFavorito()">
+          <i class="material-icons">favorite_border</i>
+        </a>
+      </ng-template>
+      <button class="btn orange lighten-2 activator"><i class="material-icons">info_outline</i></button>
+    </div>
+  </div>
+</div>
