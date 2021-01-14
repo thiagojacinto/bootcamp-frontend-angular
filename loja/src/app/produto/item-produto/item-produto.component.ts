@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Produto } from '../Produto.interface';
 
 @Component({
@@ -7,6 +7,8 @@ import { Produto } from '../Produto.interface';
   styleUrls: ['./item-produto.component.css']
 })
 export class ItemProdutoComponent implements OnInit {
+
+  @Input("tamanho") tamanho?: string;
 
   produto: Produto = {
     nome: "Produto A",
@@ -21,6 +23,7 @@ export class ItemProdutoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (!this.tamanho) this.tamanho = "medium";
   }
 
   /**

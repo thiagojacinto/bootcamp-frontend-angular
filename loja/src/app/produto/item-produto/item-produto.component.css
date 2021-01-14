@@ -1,7 +1,63 @@
-p,span {
-  color: #3A0CA3;
+
+p,
+span {
+  color: #3a0ca3;
 }
 
-button,a {
-  margin: 0.2rem;
+span {
+  font-weight: 900;
+}
+
+button, a {
+  background-color: #4CC9F0;
+  font-size: 1.75rem;
+}
+
+.row {
+  margin-bottom: 0;
+}
+
+.produto__informacoes {
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+div.produto__comprar .col {
+  margin: 0.3rem 0;
+  display: flex;
+  flex-direction: row;
+  
+  justify-content: center;
+}
+
+.card-title {
+  color: #3A0CA3;
+  font-weight: 900;
+}
+
+.card-reveal .card-title {
+  padding: 2rem;
+}
+
+.card-content,
+.card-reveal,
+.card-action {
+  background-color: #7209b7;
+}
+.card-content p,
+.card-content span,
+.card-reveal p,
+.card-reveal span,
+.card-action p,
+.card-action span {
+  color: white;
+}
+
+.produto__comprar {
+  justify-content: space-around;
+  align-items:flex-start;
+}
+
+i {
+  font-size: 2.6rem;
 }
