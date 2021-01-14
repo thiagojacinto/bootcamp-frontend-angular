@@ -10,11 +10,7 @@ export class ItemProdutoComponent implements OnInit {
 
   @Input("tamanho") tamanho?: string;
 
-  produto: Produto = {
-    nome: "Produto A",
-    precoUnitario: 123.45,
-    descricao: "Produto inovador, interessante e de ótimo custo benefício."
-  }
+  @Input() produto!: Produto
 
   favorito: boolean;
 
