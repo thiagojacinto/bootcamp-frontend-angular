@@ -1,0 +1,15 @@
+<div class="produtos__lista">
+
+  <p *ngIf="!produtos?.length; else listaProdutos" class="center-align hoverable">Não foi possível carregar os produtos.</p>
+  
+  <ng-template #listaProdutos>
+    <ul>
+      <li *ngFor="let colunas of linhas" class="row">
+        <div *ngFor="let item of colunas" class="col s4">
+          <app-item-produto [produto]="item"></app-item-produto>
+        </div>
+      </li>
+    </ul>
+  </ng-template>
+
+</div>
