@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ProdutoModule } from './produto/produto.module';
+import { HeaderModule } from './compartilhado/componentes/header/header.module';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { ProdutoModule } from './produto/produto.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HeaderModule,
     ProdutoModule
   ],
   providers: [],
