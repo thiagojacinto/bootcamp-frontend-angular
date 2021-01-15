@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 
 import { ProdutoModule } from './produto/produto.module';
 import { HeaderModule } from './compartilhado/componentes/header/header.module';
+import { FooterModule } from './compartilhado/componentes/footer/footer.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { HeaderModule } from './compartilhado/componentes/header/header.module';
     BrowserModule,
     AppRoutingModule,
     HeaderModule,
+    FooterModule,
     ProdutoModule
   ],
   providers: [],
