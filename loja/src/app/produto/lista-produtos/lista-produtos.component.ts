@@ -1,7 +1,6 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 import { Produto } from '../Produto.interface';
-import { ProdutoService } from '../produto.service';
 
 @Component({
   selector: 'app-lista-produtos',
@@ -13,16 +12,19 @@ export class ListaProdutosComponent implements OnInit, OnChanges {
   produtos!: Produto[]
   linhas!: Produto[][]
 
-  constructor(private produtoService: ProdutoService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
-    this.produtoService
-      .obterProdutos()
-      .subscribe(produtos => {
-        this.produtos = produtos;
-        this.linhas = this.agruparLinhas(produtos);
+    this.activatedRoute.data.subscribe(
+      () => {
+        console.log('Acessou rota produtos e carregou');
+        this.produtos = this.activatedRoute.snapshot.data['listaProdutos'];
+        this.linhas = this.agruparLinhas(this.produtos);
       },
-      err => console.error)
+      err => console.error(err)
+    );
   }
 
   ngOnChanges(changes: SimpleChanges): void {

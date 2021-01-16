@@ -10,6 +10,10 @@ export class ProdutoService {
 
   constructor(private http: HttpClient) {}
 
+  /**
+   * Retorna uma lista de produtos
+   * @returns Array<Produto>
+   */
   obterProdutos() {
     const url = environment.API + '/v1/produtos'
     return this.http.get<Produto[]>(url);
