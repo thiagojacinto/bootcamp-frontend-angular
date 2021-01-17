@@ -1,0 +1,7 @@
+.cart {
+  min-height: 70vh;
+}
+
+.cart__empty, .cart__empty blockquote {
+  padding: 3rem 0;
+}

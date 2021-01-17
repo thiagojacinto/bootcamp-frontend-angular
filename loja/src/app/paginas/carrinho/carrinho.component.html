@@ -1,0 +1,18 @@
+<div class="container cart">
+
+  <button class="btn">Continuar comprando</button>
+
+  <!--  -->
+  <ol *ngIf = "itens.length; else carrinhoVazio">
+    <li class="cart__item" *ngFor = "let item of itens">
+      <strong>{{ item.nome }}</strong>
+    </li>
+  </ol>
+
+  <ng-template #carrinhoVazio>
+    <div class="cart__empty">
+      <blockquote class="center-align hoverable flow-text">Seu carrinho está vazio</blockquote>
+    </div>
+  </ng-template>
+
+</div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CarrinhoComponent } from './paginas/carrinho/carrinho.component';
 import { NotFound404Component } from './paginas/not-found404/not-found404.component';
 import { ItemProdutoComponent } from './produto/item-produto/item-produto.component';
 import { CarregarProdutosResolver } from './produto/lista-produtos/carregar-produtos.resolver';
@@ -17,6 +18,10 @@ const routes: Routes = [
     resolve: {
       listaProdutos: CarregarProdutosResolver
     }
+  },
+  {
+    path: "carrinho",
+    component: CarrinhoComponent
   },
   {
     path: "nao-encontrada",
