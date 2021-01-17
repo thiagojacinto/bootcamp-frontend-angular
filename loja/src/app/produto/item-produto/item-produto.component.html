@@ -18,11 +18,11 @@
     </span>
     <div class="produto__informacoes container">
       <span>Fornecedor:</span>
-      <p>{{ produto.fornecedor }}</p>
+      <p>{{ produto.fornecedor?.nome }} / CNPJ {{ produto.fornecedor?.cnpj }}</p>
       <span>Categoria:</span>
-      <p>{{ produto.categoria }}</p>
+      <p>{{ produto.categoria?.nome }}</p>
       <span>Marca:</span>
-      <p>{{ produto.marca }}</p>
+      <p>{{ produto.marca?.nome }}</p>
     </div>
   </div>
 

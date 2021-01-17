@@ -8,6 +8,7 @@ export interface Produto {
   },
   fornecedor?: {
     nome: string,
+    cnpj?: string,
     ativo?: boolean
   },
   marca?: {
