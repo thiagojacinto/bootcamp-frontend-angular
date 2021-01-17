@@ -29,7 +29,7 @@
   <div class="card-action">
     <div class="produto__comprar row">
       <div class="col s4 m4">
-        <a class="btn btn-medium" href="#"><i class="material-icons">add_shopping_cart</i></a>
+        <a class="btn btn-medium" (click)="adicionarAoCarrinho(produto)"><i class="material-icons">add_shopping_cart</i></a>
       </div>
 
       <div class="col s4 m4" *ngIf="favorito; else naoFavorito">

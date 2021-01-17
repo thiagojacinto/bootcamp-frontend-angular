@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LocalStorageService } from 'src/app/compartilhado/services/local-storage/local-storage.service';
 import { Produto } from '../Produto.interface';
 
 @Component({
@@ -14,7 +16,10 @@ export class ItemProdutoComponent implements OnInit {
 
   favorito: boolean;
 
-  constructor() { 
+  constructor(
+    private router: Router,
+    private storage: LocalStorageService<Produto>
+    ) { 
     this.favorito = false;
   }
 
@@ -27,6 +32,18 @@ export class ItemProdutoComponent implements OnInit {
    */
   toggleFavorito(): void {
     this.favorito = !this.favorito;
+  }
+
+  /**
+   * Adicionar produto ao carrinho
+   * @param produto Produto
+   */
+  adicionarAoCarrinho(produto: Produto) {
+    this.storage.add("carrinho", produto);
+  }
+
+  goToCarrinho(): void {
+    this.router.navigate(['carrinho']);
   }
 
 }

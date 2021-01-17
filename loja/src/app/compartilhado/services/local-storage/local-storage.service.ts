@@ -8,11 +8,20 @@ export class LocalStorageService<T> {
   constructor() {}
 
   /**
+   * Verifica se a storage está vazia.
+   */
+  estaVazio(): boolean {
+    return sessionStorage.length > 0
+      ? false
+      : true;
+  }
+
+  /**
    * Retorna o dado
    * @param dataKey chave ou identificador do dato guardado
    */
   getJSON(dataKey: string) {
-    if (sessionStorage.length === 0) return "";
+    if (this.estaVazio()) return "";
     return sessionStorage.getItem(dataKey);
   }
 
@@ -33,6 +42,22 @@ export class LocalStorageService<T> {
    */
   set(dataKey: string, data: string): void {
     sessionStorage.setItem(dataKey, data);
+  }
+
+  /**
+   * Adiciona um novo item a lista
+   * @param dataKey chave ou identificador
+   * @param novoItem conteúdo do novo item a ser adicionado
+   */
+  add(dataKey: string, novoItem: T): void {
+    let dados: T[] = [];
+
+    if (!this.estaVazio()) {
+      dados = this.get(dataKey);
+    }
+
+    dados.push(novoItem);
+    this.set(dataKey, JSON.stringify(dados));
   }
 
 }
