@@ -20,13 +20,10 @@ export class LoadingService {
   }
 
   start() {
-    console.log('Começou carregamento');
-    
     this.loadingSubject.next(TipoLoading.CARREGANDO);
   }
   
   stop() {
-    console.log('Finalizou carregamento');
     this.loadingSubject.next(TipoLoading.PARADO)
   }
 }

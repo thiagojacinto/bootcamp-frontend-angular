@@ -1,4 +1,5 @@
 import {
+  HttpErrorResponse,
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
@@ -23,7 +24,7 @@ export class LoadingInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       tap((chamada) => {
-        if (chamada instanceof HttpResponse) {
+        if (chamada instanceof HttpResponse || chamada instanceof HttpErrorResponse) {
           this.loadingService.stop();
         } else {
           this.loadingService.start();
