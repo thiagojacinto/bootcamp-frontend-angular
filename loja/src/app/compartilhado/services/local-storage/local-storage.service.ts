@@ -53,11 +53,28 @@ export class LocalStorageService<T> {
     let dados: T[] = [];
 
     if (!this.estaVazio()) {
+      if (this.estaDuplicado(dataKey, novoItem)) throw new Error("Item já adicionado ao carrinho.");
       dados = this.get(dataKey);
     }
 
+
     dados.push(novoItem);
     this.set(dataKey, JSON.stringify(dados));
+  }
+
+  private estaDuplicado(dataKey: string, novoItem: T): boolean {
+    const lista = this.get(dataKey);
+    const procurado = lista.filter(item => JSON.stringify(item) === JSON.stringify(novoItem));
+    if (procurado.length > 0) return true;
+    return false;
+  }
+
+  /**
+   * Retorna a quantidade de itens inseridos.
+   * @param dataKey 
+   */
+  count(dataKey: string): number {
+    return this.get(dataKey).length;
   }
 
 }

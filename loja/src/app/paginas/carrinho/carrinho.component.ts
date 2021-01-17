@@ -9,7 +9,7 @@ import { Produto } from 'src/app/produto/Produto.interface';
 })
 export class CarrinhoComponent implements OnInit {
 
-  itens: Produto[];
+  itens: [number, Produto][];
 
   constructor(private storage: LocalStorageService<Produto>) {
     this.itens = [];
@@ -17,7 +17,13 @@ export class CarrinhoComponent implements OnInit {
 
   ngOnInit(): void {
     const res = this.storage.get("carrinho");
-    if (res) this.itens = res;
+    if (res) {
+      const itensMap = new Map();
+      for (let i=0; i < res.length; i++) {
+        itensMap.set(res[i].id, res[i]);
+      }
+      this.itens = Array.from(itensMap);
+    }
   }
 
 }

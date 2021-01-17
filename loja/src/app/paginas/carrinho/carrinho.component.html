@@ -1,11 +1,11 @@
 <div class="container cart">
 
-  <button class="btn">Continuar comprando</button>
+  <button class="btn" routerLink="/produto">Continuar comprando</button>
 
   <!--  -->
   <ol *ngIf = "itens.length; else carrinhoVazio">
     <li class="cart__item" *ngFor = "let item of itens">
-      <strong>{{ item.nome }}</strong>
+      <strong>{{ item[1].nome }}</strong>
     </li>
   </ol>
 
