@@ -1,22 +1,26 @@
-<div class="container cart">
+<app-pagina-padrao>
+  <div class="container cart">
+    <button class="btn" routerLink="/produto">Continuar comprando</button>
 
-  <button class="btn" routerLink="/produto">Continuar comprando</button>
+    <!--  -->
+    <ol class="collection" *ngIf="itens.length; else carrinhoVazio">
+      <li class="cart__item collection-item" *ngFor="let item of itens">
+        <strong>{{ item[1].nome }}</strong>
+        <p class="cart__item__price">
+          {{ item[1].precoUnitario | currency: "BRL":"symbol" }}
+        </p>
+        <button class="btn red darken-2" (click)="removerItem(item[1])">
+          <i class="material-icons">backspace</i>
+        </button>
+      </li>
+    </ol>
 
-  <!--  -->
-  <ol class="collection" *ngIf = "itens.length; else carrinhoVazio">
-    <li class="cart__item collection-item" *ngFor = "let item of itens">
-      <strong>{{ item[1].nome }}</strong>
-      <p class="cart__item__price">{{ item[1].precoUnitario | currency:'BRL':'symbol' }}</p>
-      <button class="btn red darken-2" (click)="removerItem(item[1])">
-        <i class="material-icons">backspace</i>
-      </button>
-    </li>
-  </ol>
-
-  <ng-template #carrinhoVazio>
-    <div class="cart__empty">
-      <blockquote class="center-align hoverable flow-text">Seu carrinho está vazio</blockquote>
-    </div>
-  </ng-template>
-
-</div>
+    <ng-template #carrinhoVazio>
+      <div class="cart__empty">
+        <blockquote class="center-align hoverable flow-text">
+          Seu carrinho está vazio
+        </blockquote>
+      </div>
+    </ng-template>
+  </div>
+</app-pagina-padrao>

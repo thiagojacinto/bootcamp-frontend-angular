@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ItemProdutoComponent } from './item-produto/item-produto.component';
 import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
+import { PaginasModule } from '../paginas/paginas.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ListaProdutosComponent } from './lista-produtos/lista-produtos.componen
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    PaginasModule
   ],
   exports: [
     ItemProdutoComponent,

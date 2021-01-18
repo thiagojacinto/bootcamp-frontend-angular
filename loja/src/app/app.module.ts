@@ -17,8 +17,6 @@ import { PaginasModule } from './paginas/paginas.module';
     BrowserModule,
     CommonModule,
     AppRoutingModule,
-    HeaderModule,
-    FooterModule,
     ProdutoModule,
     PaginasModule
   ],

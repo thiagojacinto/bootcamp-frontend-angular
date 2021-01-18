@@ -8,6 +8,10 @@ import { ListaProdutosComponent } from './produto/lista-produtos/lista-produtos.
 
 const routes: Routes = [
   {
+    path: "admin",
+    loadChildren: () => import('./paginas/admin/admin.module').then(m => m.AdminModule)
+  },
+  {
     path: "produto/:id",
     component: ItemProdutoComponent,
     pathMatch: 'full'
