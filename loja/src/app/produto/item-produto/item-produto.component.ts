@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ContadorService } from 'src/app/compartilhado/componentes/contador-carrinho/contador.service';
 import { LocalStorageService } from 'src/app/compartilhado/services/local-storage/local-storage.service';
 import { Produto } from '../Produto.interface';
@@ -18,7 +17,6 @@ export class ItemProdutoComponent implements OnInit {
   favorito: boolean;
 
   constructor(
-    private router: Router,
     private storage: LocalStorageService<Produto>,
     private contador: ContadorService
     ) { 
@@ -43,10 +41,6 @@ export class ItemProdutoComponent implements OnInit {
   adicionarAoCarrinho(produto: Produto) {
     this.storage.add("carrinho", produto);
     this.contador.incrementar();
-  }
-
-  goToCarrinho(): void {
-    this.router.navigate(['carrinho']);
   }
 
 }

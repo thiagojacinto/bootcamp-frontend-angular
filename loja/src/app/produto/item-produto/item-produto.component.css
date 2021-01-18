@@ -61,3 +61,23 @@ div.produto__comprar .col {
 i {
   font-size: 2.6rem;
 }
+
+.produto__descricao {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: baseline;
+  align-items: center;
+}
+
+.produto__descricao strong {
+  color: #4CC9F0;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 800px) {
+  .produto__descricao {
+    flex-direction: row;
+  }
+}
