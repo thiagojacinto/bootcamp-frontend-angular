@@ -6,7 +6,7 @@
 
   <div class="card-content">
     <div class="produto__descricao container">
-      <strong>R$ {{ produto.precoUnitario }}</strong>
+      <strong>{{ produto.precoUnitario | currency:'BRL':'symbol' }}</strong>
       <span class="hide-on-med-and-up">Descrição</span>
       <p class="hide-on-med-and-up">{{ produto.descricao }}</p>
     </div>

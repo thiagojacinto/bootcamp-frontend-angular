@@ -8,10 +8,9 @@
 
 .cart__item {
   padding: 1.5rem 0;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 4fr 2fr 1fr;
 
-  justify-content: space-between;
   align-items: center;
 }
 
