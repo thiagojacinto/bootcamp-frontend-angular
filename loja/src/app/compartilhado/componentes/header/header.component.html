@@ -6,7 +6,14 @@
     <app-loading></app-loading>
     <ul id="nav-mobile" class="right">
       <li><a routerLink="produto">Produtos</a></li>
-      <li><a routerLink="carrinho"><i class="material-icons">shopping_cart</i></a></li>
+      <li>
+        <a class="cart__link" routerLink="carrinho">
+          <i class="material-icons">shopping_cart</i>
+        </a>
+      </li>
+      <li>
+        <app-contador-carrinho></app-contador-carrinho>
+      </li>
     </ul>
   </div>
 </nav>
