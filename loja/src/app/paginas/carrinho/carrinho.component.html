@@ -3,9 +3,12 @@
   <button class="btn" routerLink="/produto">Continuar comprando</button>
 
   <!--  -->
-  <ol *ngIf = "itens.length; else carrinhoVazio">
-    <li class="cart__item" *ngFor = "let item of itens">
+  <ol class="collection" *ngIf = "itens.length; else carrinhoVazio">
+    <li class="cart__item collection-item" *ngFor = "let item of itens">
       <strong>{{ item[1].nome }}</strong>
+      <button class="btn red darken-2" (click)="removerItem(item[1])">
+        <i class="material-icons">backspace</i>
+      </button>
     </li>
   </ol>
 
