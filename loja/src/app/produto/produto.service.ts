@@ -18,4 +18,13 @@ export class ProdutoService {
     const url = environment.API + '/v1/produtos'
     return this.http.get<Produto[]>(url);
   }
+
+  /**
+   * Cadastra novo produto
+   * @param novo Produto
+   */
+  cadastrarProduto(novo: Produto) {
+    const url = environment.API + '/v1/produtos'
+    return this.http.post(url, novo);
+  }
 }

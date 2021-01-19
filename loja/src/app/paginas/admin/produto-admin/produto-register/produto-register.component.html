@@ -1,0 +1,41 @@
+<h4>Cadastrar produto...</h4>
+<div class="row">
+  <form [formGroup]="form" class="col s12" (submit)="cadastrar()">
+    <div class="row">
+      <div class="input-field col s6">
+        <input
+          formControlName="nome"
+          id="nome"
+          type="text"
+          class="validate"
+        />
+        <label for="nome">Nome</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="descricao" id="descricao" type="text" class="validate" />
+        <label for="descricao">Descrição</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="precoUnitario" id="precoUnitario" type="text" class="validate" />
+        <label for="precoUnitario">Preço Unitário (R$)</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="idCategoria" id="categoria" type="number" class="validate" />
+        <label for="categoria">Categoria (nº)</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="idMarca" id="marca" type="number" class="validate" />
+        <label for="marca">Marca (nº)</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="idFornecedor" id="fornecedore" type="number" class="validate" />
+        <label for="fornecedore">Fornecedor (nº)</label>
+      </div>
+    </div>
+    <button class="btn">Registrar</button>
+  </form>
+</div>
