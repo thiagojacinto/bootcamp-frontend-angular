@@ -52,6 +52,7 @@ export class ProdutoRegisterComponent implements OnInit {
     this.produtoService.cadastrarProduto(novoProduto)
       .subscribe(() => {
         console.log(`Produto ${novoProduto.nome} cadastrado com sucesso.`);
+        this.form.reset();
         this.router.onSameUrlNavigation = 'reload';
         this.router.navigate(['admin', 'produtos']);
       },
