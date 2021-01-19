@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-pagina-padrao',
-  templateUrl: './pagina-padrao.component.html',
-  styleUrls: ['./pagina-padrao.component.css']
+  templateUrl: './pagina-padrao.component.html'
 })
-export class PaginaPadraoComponent implements OnInit {
+export class PaginaPadraoComponent{
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
