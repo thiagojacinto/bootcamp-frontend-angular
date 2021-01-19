@@ -5,12 +5,16 @@ import { HeaderAdminComponent } from './header-admin/header-admin.component';
 import { ProdutoAdminComponent } from './produto-admin/produto-admin.component';
 import { AdminComponent } from './admin.component';
 import { AdminRoutingModule } from './admin-routing.module';
+import { RouterModule } from '@angular/router';
+import { LoadingModule } from 'src/app/compartilhado/componentes/loading/loading.module';
 
 @NgModule({
   declarations: [HeaderAdminComponent, ProdutoAdminComponent, AdminComponent],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    RouterModule,
+    LoadingModule
   ],
   bootstrap: [AdminComponent]
 })

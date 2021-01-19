@@ -15,5 +15,5 @@ export interface Produto {
   marca?: {
     nome: string,
   },
-  faq?: Array<string>
+  faqs?: Array<string>
 }

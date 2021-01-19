@@ -7,7 +7,11 @@ import { ProdutoAdminComponent } from './produto-admin/produto-admin.component';
 const routes: Routes = [
   {
     path: '',
-    component: AdminComponent
+    redirectTo: 'produtos'
+  },
+  {
+    path: 'produtos',
+    component: ProdutoAdminComponent
   }
 ];
 
