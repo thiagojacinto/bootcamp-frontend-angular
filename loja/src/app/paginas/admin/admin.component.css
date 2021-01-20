@@ -1,9 +1,19 @@
+main {
+  max-width: 100vw;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+}
+
+main div {
+  overflow: hidden;
+}
+
 @media (min-width: 800px) {
 
   main {
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-area: aside div;
+    grid-template-areas: 
+      "aside div div div";
   }
 
 }
