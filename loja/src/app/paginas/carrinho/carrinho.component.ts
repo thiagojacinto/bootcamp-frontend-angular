@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { ContadorService } from 'src/app/compartilhado/componentes/contador-carrinho/contador.service';
 import { LocalStorageService } from 'src/app/compartilhado/services/local-storage/local-storage.service';
 import { Produto } from 'src/app/produto/Produto.interface';
@@ -14,7 +16,8 @@ export class CarrinhoComponent implements OnInit {
 
   constructor(
     private storage: LocalStorageService<Produto>,
-    private contador: ContadorService
+    private contador: ContadorService,
+    private router: Router
     ) {
     this.itens = [];
   }
@@ -49,6 +52,14 @@ export class CarrinhoComponent implements OnInit {
       this.contador.decrementar();
       this.atualizarItens();
     } else throw new Error('Não foi possível remover o item do carrinho.');
+  }
+
+  /**
+   * Rediciona para página de destaque do produto.
+   * @param produto Produto
+   */
+  visitarProduto(produto: Produto) {
+    this.router.navigate(['produto', produto.id]);
   }
 
 }

@@ -5,6 +5,7 @@
     <!--  -->
     <ol class="collection" *ngIf="itens.length; else carrinhoVazio">
       <li class="cart__item collection-item" *ngFor="let item of itens">
+        <button (click)="visitarProduto(item[1])"><i class="material-icons">info_outline</i></button>
         <strong>{{ item[1].nome }}</strong>
         <p class="cart__item__price">
           {{ item[1].precoUnitario | currency: "BRL":"symbol" }}
