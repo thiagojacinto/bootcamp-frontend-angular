@@ -1,56 +1,67 @@
-<div class="card hoverable sticky-action {{ tamanho }}">
-  <div class="card-image">
-    <img class="responsive-img materialboxed" src="assets/404.jpeg" alt="Imagem do Produto" />
-    <span class="card-title">{{ produto.nome }}</span>
-  </div>
-
-  <div class="card-content">
-    <div class="produto__descricao container">
-      <strong>{{ produto.precoUnitario | currency:'BRL':'symbol' }}</strong>
-      <span class="hide-on-med-and-up">Descrição</span>
-      <p class="hide-on-med-and-up">{{ produto.descricao }}</p>
+<div class="produto__detalhe">
+  <div class="card hoverable sticky-action {{ tamanho }}">
+    <div class="card-image">
+      <img
+        class="responsive-img materialboxed"
+        src="assets/404.jpeg"
+        alt="Imagem do Produto"
+      />
+      <span class="card-title">{{ produto.nome }}</span>
     </div>
-  </div>
 
-  <div class="card-reveal container">
-    <span class="card-title">
-      {{ produto.nome }}
-      <i class="material-icons">close</i>
-    </span>
-    <div class="produto__informacoes container">
-      <span>Fornecedor:</span>
-      <p>{{ produto.fornecedor?.nome }} / CNPJ {{ produto.fornecedor?.cnpj }}</p>
-      <span>Categoria:</span>
-      <p>{{ produto.categoria?.nome }}</p>
-      <span>Marca:</span>
-      <p>{{ produto.marca?.nome }}</p>
+    <div class="card-content">
+      <div class="produto__descricao container">
+        <strong>{{ produto.precoUnitario | currency: "BRL":"symbol" }}</strong>
+        <span class="hide-on-med-and-up">Descrição</span>
+        <p class="hide-on-med-and-up">{{ produto.descricao }}</p>
+      </div>
     </div>
-  </div>
 
-  <div class="card-action">
-    <div class="produto__comprar row">
-      <div class="col s4 m4">
-        <a class="btn btn-medium" (click)="adicionarAoCarrinho(produto)"><i class="material-icons">add_shopping_cart</i></a>
+    <div class="card-reveal container">
+      <span class="card-title">
+        {{ produto.nome }}
+        <i class="material-icons">close</i>
+      </span>
+      <div class="produto__informacoes container">
+        <span>Fornecedor:</span>
+        <p>
+          {{ produto.fornecedor?.nome }} / CNPJ {{ produto.fornecedor?.cnpj }}
+        </p>
+        <span>Categoria:</span>
+        <p>{{ produto.categoria?.nome }}</p>
+        <span>Marca:</span>
+        <p>{{ produto.marca?.nome }}</p>
       </div>
+    </div>
 
-      <div class="col s4 m4" *ngIf="favorito; else naoFavorito">
-        <a class="btn btn-medium" href="#" (click)="toggleFavorito()">
-          <i class="material-icons">favorite</i>
-        </a>
-      </div>
-
-      <ng-template #naoFavorito>
+    <div class="card-action">
+      <div class="produto__comprar row">
         <div class="col s4 m4">
-          <a class="btn btn-medium" href="#" (click)="toggleFavorito()">
-            <i class="material-icons">favorite_border</i>
+          <a class="btn btn-medium" (click)="adicionarAoCarrinho(produto)"
+            ><i class="material-icons">add_shopping_cart</i></a
+          >
+        </div>
+
+        <div class="col s4 m4" *ngIf="favorito; else naoFavorito">
+          <a class="btn btn-medium" (click)="toggleFavorito()">
+            <i class="material-icons">favorite</i>
           </a>
         </div>
-      </ng-template>
 
-      <div class="col s4 m4">
-        <button class="btn btn-medium activator"><i class="material-icons">info_outline</i></button>
+        <ng-template #naoFavorito>
+          <div class="col s4 m4">
+            <a class="btn btn-medium" (click)="toggleFavorito()">
+              <i class="material-icons">favorite_border</i>
+            </a>
+          </div>
+        </ng-template>
+
+        <div class="col s4 m4">
+          <button class="btn btn-medium activator">
+            <i class="material-icons">info_outline</i>
+          </button>
+        </div>
       </div>
-
     </div>
   </div>
 </div>

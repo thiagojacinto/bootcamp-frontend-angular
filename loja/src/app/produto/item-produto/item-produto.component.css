@@ -53,6 +53,10 @@ div.produto__comprar .col {
   color: white;
 }
 
+.produto__detalhe {
+  max-width: 500px;
+}
+
 .produto__comprar {
   justify-content: space-around;
   align-items:flex-start;

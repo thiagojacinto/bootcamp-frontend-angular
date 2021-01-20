@@ -20,6 +20,15 @@ export class ProdutoService {
   }
 
   /**
+   * Busca e retorna um produto através de seu ID
+   * @param id ID do Produto
+   */
+  obterProdutoPeloId(id: number) {
+    const url = environment.API + '/v1/produtos/' + id;
+    return this.http.get<Produto>(url);
+  }
+
+  /**
    * Cadastra novo produto
    * @param novo Produto
    */
