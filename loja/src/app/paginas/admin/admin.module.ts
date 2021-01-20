@@ -10,9 +10,10 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { LoadingModule } from 'src/app/compartilhado/componentes/loading/loading.module';
 import { ProdutoRegisterComponent } from './produto-admin/produto-register/produto-register.component';
 import { NavComponent } from './nav/nav.component';
+import { VendasAdminComponent } from './vendas-admin/vendas-admin.component';
 
 @NgModule({
-  declarations: [HeaderAdminComponent, ProdutoAdminComponent, AdminComponent, ProdutoRegisterComponent, NavComponent],
+  declarations: [HeaderAdminComponent, ProdutoAdminComponent, AdminComponent, ProdutoRegisterComponent, NavComponent, VendasAdminComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
