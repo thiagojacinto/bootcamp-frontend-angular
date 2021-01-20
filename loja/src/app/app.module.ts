@@ -5,9 +5,8 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 
 import { ProdutoModule } from './produto/produto.module';
-import { HeaderModule } from './compartilhado/componentes/header/header.module';
-import { FooterModule } from './compartilhado/componentes/footer/footer.module';
 import { PaginasModule } from './paginas/paginas.module';
+import { LoadingModule } from './compartilhado/componentes/loading/loading.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +16,7 @@ import { PaginasModule } from './paginas/paginas.module';
     BrowserModule,
     CommonModule,
     AppRoutingModule,
+    LoadingModule,
     ProdutoModule,
     PaginasModule
   ],
