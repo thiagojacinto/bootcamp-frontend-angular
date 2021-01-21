@@ -17,7 +17,7 @@ export class AtualizarFornecedorComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private fornecedorService: FornecedorService,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
