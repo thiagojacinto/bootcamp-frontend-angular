@@ -20,7 +20,7 @@
             <td>{{ venda.valorTotal | currency: "BRL":"symbol" }}</td>
             <td>{{ venda.cliente?.nome }}</td>
             <td>{{ venda.formaPagamento?.forma }}</td>
-            <td>{{ venda.items?.length || 0 }}</td>
+            <td>{{ venda.itens?.length || 0 }}</td>
           </tr>
         </tbody>
       </table>
