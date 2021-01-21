@@ -1,0 +1,52 @@
+@media (min-width: 800px) {
+  .inicial {
+    grid-template-columns: 5fr 1fr;
+    justify-content: space-between;
+  }
+}
+.inicial {
+  display: grid;
+  grid-template-rows: 5fr 1fr;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.imagem {
+  max-width: 500px;
+}
+
+.botao__inicial {
+  font-size: 2.5rem;
+}
+
+.inicial__conteudo { 
+  margin: 1rem auto;
+  place-content: center;
+}
+
+/* ANIMATION FROM https://www.gradient-animator.com */
+.bg-animation {
+    background: linear-gradient(222deg, #ecbcd2, #c8b8ee, #b1e4f3);
+    background-size: 600% 600%;
+
+    -webkit-animation: background 5s ease infinite;
+    -moz-animation: background 5s ease infinite;
+    animation: background 5s ease infinite;
+}
+
+@-webkit-keyframes background {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes background {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@keyframes background { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}

@@ -7,9 +7,10 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { PaginaPadraoComponent } from './pagina-padrao/pagina-padrao.component';
 import { FooterModule } from '../compartilhado/componentes/footer/footer.module';
 import { HeaderModule } from '../compartilhado/componentes/header/header.module';
+import { InicialComponent } from './inicial/inicial.component';
 
 @NgModule({
-  declarations: [NotFound404Component, CarrinhoComponent, PaginaPadraoComponent],
+  declarations: [NotFound404Component, CarrinhoComponent, PaginaPadraoComponent, InicialComponent],
   imports: [
     CommonModule,
     RouterModule,
