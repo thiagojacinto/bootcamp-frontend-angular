@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Venda } from './vendas.interface';
 import { VendasService } from './vendas.service';
 
@@ -7,7 +7,7 @@ import { VendasService } from './vendas.service';
   templateUrl: './vendas-admin.component.html',
   styleUrls: ['./vendas-admin.component.css'],
 })
-export class VendasAdminComponent implements OnInit {
+export class VendasAdminComponent implements OnInit, OnChanges {
 
   vendas: Venda[];
 
@@ -19,8 +19,21 @@ export class VendasAdminComponent implements OnInit {
     this.obterVendas();
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+  }
+
   obterVendas() {
     this.vendaService.obterVendas()
+      .subscribe(
+        (res) => this.vendas = res,
+        (err) => console.error(err)  
+      );
+  }
+
+  obterVendasPorFormaPagamento(formaPagamento: number) {
+    if (![1,2,3,4].includes(formaPagamento)) throw new Error('Forma de pagamento inválida. Tente novamente.');
+
+    this.vendaService.vendasPorPagamento(formaPagamento)
       .subscribe(
         (res) => this.vendas = res,
         (err) => console.error(err)  

@@ -17,4 +17,16 @@ export class VendasService {
     const url = environment.API + '/v1/vendas';
     return this.http.get<Venda[]>(url);
   }
+  
+  /**
+   * Lista as vendas por forma de pagamento, sendo:
+   * 1 - Dinheiro
+   * 2 - Crédito
+   * 3 - Débito
+   * @param formaPagamento number
+   */
+  vendasPorPagamento(formaPagamento = 1) {
+    const url = environment.API + '/v1/vendas?formaPagamentoID=' + formaPagamento;
+    return this.http.get<Venda[]>(url);
+  }
 }
