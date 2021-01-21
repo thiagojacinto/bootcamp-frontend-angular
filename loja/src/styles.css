@@ -6,3 +6,8 @@ body {
 app-root {
   max-width: 100%;
 }
+
+.admin-table {
+  height: 40vh;
+  overflow-y: scroll;
+}

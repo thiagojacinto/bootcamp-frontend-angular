@@ -1,0 +1,38 @@
+<h4>Atualizar fornecedor '{{ fornecedor.nome }}'</h4>
+<button class="btn right red darken-2" [disabled]="form.invalid" (click)="remover(fornecedor)">Deletar</button>
+<div class="row">
+  <form [formGroup]="form" class="col s12" (submit)="atualizar()">
+    <div class="row">
+      <div class="input-field col s6">
+        <input
+          formControlName="nome"
+          id="nome"
+          type="text"
+          class="validate"
+        />
+        <label for="nome">Nome</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="endereco" id="endereco" type="text" class="validate" />
+        <label for="endereco">Endereço</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s4">
+        <input formControlName="telefone" id="telefone" type="text" class="validate" />
+        <label for="telefone">Telefone</label>
+      </div>
+      <div class="input-field col s8">
+        <input formControlName="cnpj" id="cnpj" type="text" class="validate" />
+        <label for="cnpj">CNPJ</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input formControlName="email" id="email" type="email" class="validate" />
+        <label for="email">Email</label>
+      </div>
+    </div>
+    <button class="btn col s12 m4 orange darken-1" [disabled]="form.invalid">Atualizar</button>
+  </form>
+</div>
