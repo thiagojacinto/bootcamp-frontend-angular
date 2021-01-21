@@ -1,21 +1,24 @@
 <app-pagina-padrao>
   <div class="container cart">
-    <button class="btn deep-purple accent-2" routerLink="/produto">Continuar comprando</button>
+    <button class="btn orange darken-3 waves-effect waves-yellow" routerLink="/produto">Continuar comprando</button>
 
-    <!--  -->
-    <ol class="collection" *ngIf="itens.length; else carrinhoVazio">
-      <li class="cart__item collection-item" *ngFor="let item of itens">
-        <button (click)="visitarProduto(item[1])"><i class="material-icons">info_outline</i></button>
-        <strong>{{ item[1].nome }}</strong>
-        <p class="cart__item__price">
-          {{ item[1].precoUnitario | currency: "BRL":"symbol" }}
-        </p>
-        <button class="btn red darken-2" (click)="removerItem(item[1])">
-          <i class="material-icons">backspace</i>
-        </button>
-      </li>
-    </ol>
+    <div class="carrinho__conteudo" *ngIf="itens.length; else carrinhoVazio">
+      <ol class="collection" >
+        <li class="cart__item collection-item" *ngFor="let item of itens">
+          <button (click)="visitarProduto(item[1])"><i class="material-icons">info_outline</i></button>
+          <strong>{{ item[1].nome }}</strong>
+          <p class="cart__item__price">
+            {{ item[1].precoUnitario | currency: "BRL":"symbol" }}
+          </p>
+          <button class="btn red darken-2" (click)="removerItem(item[1])">
+            <i class="material-icons">backspace</i>
+          </button>
+        </li>
+      </ol>
 
+      <button class="confirmar btn light-green lighten-1 waves-effect waves-yellow right" routerLink="/confirmar">Prosseguir compra</button>
+    </div>
+      
     <ng-template #carrinhoVazio>
       <div class="cart__empty">
         <blockquote class="center-align hoverable flow-text">

@@ -8,15 +8,17 @@ import { PaginaPadraoComponent } from './pagina-padrao/pagina-padrao.component';
 import { FooterModule } from '../compartilhado/componentes/footer/footer.module';
 import { HeaderModule } from '../compartilhado/componentes/header/header.module';
 import { InicialComponent } from './inicial/inicial.component';
+import { ConfirmarCompraComponent } from './confirmar-compra/confirmar-compra.component';
+import { NavegacaoComponent } from './confirmar-compra/navegacao/navegacao.component';
 
 @NgModule({
-  declarations: [NotFound404Component, CarrinhoComponent, PaginaPadraoComponent, InicialComponent],
+  declarations: [NotFound404Component, CarrinhoComponent, PaginaPadraoComponent, InicialComponent, ConfirmarCompraComponent, NavegacaoComponent],
   imports: [
     CommonModule,
     RouterModule,
     FooterModule,
     HeaderModule
   ],
-  exports: [PaginaPadraoComponent]
+  exports: [PaginaPadraoComponent, NavegacaoComponent]
 })
 export class PaginasModule { }

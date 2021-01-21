@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CarrinhoComponent } from './paginas/carrinho/carrinho.component';
+import { ConfirmarCompraComponent } from './paginas/confirmar-compra/confirmar-compra.component';
 import { InicialComponent } from './paginas/inicial/inicial.component';
 import { NotFound404Component } from './paginas/not-found404/not-found404.component';
 import { CarregarProdutosResolver } from './produto/lista-produtos/carregar-produtos.resolver';
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: "carrinho",
     component: CarrinhoComponent
+  },
+  {
+    path: "confirmar",
+    component: ConfirmarCompraComponent
   },
   {
     path: "nao-encontrada",
