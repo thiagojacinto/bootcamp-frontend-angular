@@ -1,0 +1,15 @@
+.preco__total > * {
+  font-weight: 900;
+  margin: 0 2rem;
+}
+
+div.secondary-content strong {
+
+  margin: 0 1.5rem;
+  font-size: 1.8rem;
+  color: black;
+}
+
+.preco__total > * {
+  margin: 1.8rem;
+}

@@ -11,3 +11,7 @@ app-root {
   height: 40vh;
   overflow-y: scroll;
 }
+
+.cart__empty, .cart__empty blockquote {
+  padding: 3rem 0;
+}

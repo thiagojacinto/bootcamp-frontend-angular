@@ -1,6 +1,41 @@
 <app-pagina-padrao>
-
   <app-navegacao></app-navegacao>
-  <p>confirmar-compra works!</p>
-  
+  <div class="lista" *ngIf="itens.length; else listaVazia">
+
+      <ul class="collection">
+        <li *ngFor="let item of itens" class="collection-item avatar">
+          <i class="material-icons circle">{{ getIcone(item.id!) || 'android' }}</i>
+          <span class="title">{{ item.nome }}</span>
+          <p>
+            {{ item.descricao }} <br />
+            Fornecedor: {{ item.fornecedor?.nome || "-" }}
+          </p>
+          <div class="secondary-content">
+            <strong>{{ item.precoUnitario | currency: "BRL":"symbol" }}</strong>
+            <button
+            (click)="removerItem(item)"
+            class="btn-large waves-effect waves-yellow red lighten-2"
+            >
+            <i class="medium material-icons">remove_shopping_cart</i>
+          </button>
+        </div>
+      </li>
+    </ul>
+
+    <div class="preco__total right-align">
+      <h5 class="">
+        {{ precoTotal | currency: "BRL":"symbol" }}
+      </h5>
+
+      <button class="btn-large waves-effect waves-yellow light-green" (click)="confirmar()">CONFIRMAR</button>
+    </div>
+  </div>
+
+  <ng-template #listaVazia>
+    <div class="cart__empty">
+      <blockquote class="center-align hoverable flow-text">
+        Seu carrinho está vazio :(
+      </blockquote>
+    </div>
+  </ng-template>
 </app-pagina-padrao>

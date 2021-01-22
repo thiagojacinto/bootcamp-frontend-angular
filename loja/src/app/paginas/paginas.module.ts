@@ -12,13 +12,15 @@ import { ConfirmarCompraComponent } from './confirmar-compra/confirmar-compra.co
 import { NavegacaoComponent } from './confirmar-compra/navegacao/navegacao.component';
 
 @NgModule({
-  declarations: [NotFound404Component, CarrinhoComponent, PaginaPadraoComponent, InicialComponent, ConfirmarCompraComponent, NavegacaoComponent],
-  imports: [
-    CommonModule,
-    RouterModule,
-    FooterModule,
-    HeaderModule
+  declarations: [
+    NotFound404Component,
+    CarrinhoComponent,
+    PaginaPadraoComponent,
+    InicialComponent,
+    ConfirmarCompraComponent,
+    NavegacaoComponent
   ],
-  exports: [PaginaPadraoComponent, NavegacaoComponent]
+  imports: [CommonModule, RouterModule, FooterModule, HeaderModule],
+  exports: [PaginaPadraoComponent, NavegacaoComponent],
 })
-export class PaginasModule { }
+export class PaginasModule {}
