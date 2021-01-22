@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:prod": "ng build --prod=true --optimization=true --verbose=true --progress=true --deploy-url=\"https://dot-store-angular.netlify.app/\""
   },
   "private": true,
   "dependencies": {
