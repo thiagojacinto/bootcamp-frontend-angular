@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ContadorService } from 'src/app/compartilhado/componentes/contador-carrinho/contador.service';
 import { LocalStorageService } from 'src/app/compartilhado/services/local-storage/local-storage.service';
 import { Produto } from 'src/app/produto/Produto.interface';
@@ -28,7 +29,8 @@ export class ConfirmarCompraComponent implements OnInit {
   constructor(
     private storage: LocalStorageService<Produto>,
     private contadorCarrinho: ContadorService,
-    private service: ConfirmarCompraService
+    private service: ConfirmarCompraService,
+    private roteador: Router
   ) {
     this.itens = [];
   }
@@ -66,10 +68,22 @@ export class ConfirmarCompraComponent implements OnInit {
     return this.icones[numero];
   }
 
+  limparCarrinho() {
+    this.storage.clear("carrinho");
+  }
+
   confirmar() {
-    this.service.confirmarCompraTotal(this.itens).subscribe(
-      (res) => console.log(`Compra registrada com ID = ${res.id}`),
-      (err) => console.error(err)
-    );
+    const redireciona = () => this.roteador.navigate(['produto']);
+    const limpar = () => this.limparCarrinho();
+    
+    const aposConfirmar = () => {
+      redireciona();
+      limpar();
+    }
+    this.service.confirmarCompraTotal(this.itens, aposConfirmar);
+    // .subscribe(
+    //   (res) => console.log(`Compra registrada com ID = ${res.id}`),
+    //   (err) => console.error(err)
+    // );
   }
 }
